@@ -1,0 +1,7 @@
+<rect
+  height={{@height}}
+  width={{@width}}
+  {{did-insert @setBarPosition}}
+  {{observe-mutation @positionDidChange this.mutationObserverInit}}
+  ...attributes
+></rect>

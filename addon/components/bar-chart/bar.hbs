@@ -1,0 +1,26 @@
+<g
+  {{did-insert (fn @reportValue @value)}}
+  {{did-update @value (fn @reportValue @value)}}
+...attributes
+>
+  {{#if hasBlock}}
+    {{yield (hash
+      Rect=(component 'bar-chart/rect'
+        height=@height
+        width=this.widthPercentage
+        setBarPosition=(fn @setBarPosition this)
+        positionDidChange=this.updatePosition
+      )
+      height=@height
+      yOffset=this.yOffset
+      width=this.width
+    )}}
+  {{else}}
+    <BarChart::Rect
+      @height={{@height}}
+      @width={{this.widthPercentage}}
+      @setBarPosition={{fn @setBarPosition this}}
+      @positionDidChange={{this.updatePosition}}
+    />
+  {{/if}}
+</g>

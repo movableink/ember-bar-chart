@@ -1,0 +1,10 @@
+<svg role="img" ...attributes>
+  {{yield (hash
+    Bar=(component 'bar-chart/bar'
+      height=@barHeight
+      maxValue=this.maxValue
+      reportValue=this.receiveValue
+      setBarPosition=this.setBarPosition
+    )
+  )}}
+</svg>
