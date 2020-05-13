@@ -28,11 +28,9 @@ export default class BarChartBarComponent extends Component {
     return `${this.widthDecimal * 100}%`;
   }
 
-  @action updatePosition(mutationRecords) {
-    for (const record of mutationRecords) {
-      if (record.attributeName === "width") {
-        this.set("barWidth", record.target.width.baseVal.value);
-      }
+  @action updatePosition(resizeObserverEntries) {
+    for (const entry of resizeObserverEntries) {
+      this.set("barWidth", entry.contentRect.width);
     }
   }
 }
