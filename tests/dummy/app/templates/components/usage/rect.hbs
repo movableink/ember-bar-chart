@@ -1,0 +1,19 @@
+<DocsDemo as |demo|>
+  <demo.example @name="usage-rect.hbs">
+    <BarChart @barHeight={{10}} @barGap={{10}} class="w-full" as |chart|>
+      <chart.Bar @value={{100}} as |bar|>
+        <bar.Rect fill="red" />
+      </chart.Bar>
+
+      <chart.Bar @value={{50}} as |bar|>
+        <bar.Rect fill="yellow" />
+      </chart.Bar>
+
+      <chart.Bar @value={{70}} as |bar|>
+        <bar.Rect fill="blue" />
+      </chart.Bar>
+    </BarChart>
+  </demo.example>
+
+  {{demo.snippet 'usage-rect.hbs'}}
+</DocsDemo>

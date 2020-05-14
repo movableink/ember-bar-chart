@@ -2,6 +2,24 @@ import Component from "@ember/component";
 import { action } from "@ember/object";
 import { TrackedMap, TrackedSet } from "tracked-maps-and-sets";
 
+/**
+ * Render a Bar Chart through an SVG
+ *
+ * ```hbs
+ * <BarChart @barHeight={{10}} @barGap={{10}} as |chart|>
+ *   <chart.Bar @value={{100}} />
+ *   <chart.Bar @value={{50}} />
+ *   <chart.Bar @value={{70}} />
+ * </BarChart>
+ * ```
+ *
+ * Attributes or modifiers on the component as passed directly to the `svg` element
+ *
+ * @class BarChartComponent
+ * @arg {number} barHeight
+ * @yield {Hash} chart
+ * @yield {BarChartBarComponent} chart.Bar the `bar-chart/bar` component
+ */
 export default class BarChartComponent extends Component {
   tagName = "";
 

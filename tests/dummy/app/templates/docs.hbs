@@ -1,0 +1,15 @@
+<DocsViewer as |viewer|>
+  <viewer.nav as |nav|>
+    {{nav.section "Introduction"}}
+    {{nav.item "Getting Started" "docs.index"}}
+    {{nav.item "Advanced Usage" "docs.usage"}}
+
+    {{nav.section "Cookbook"}}
+    {{nav.item "Custom Chart Height" "docs.cookbook.custom-height"}}
+    {{nav.item "Labels" "docs.cookbook.labels"}}
+  </viewer.nav>
+
+  <viewer.main>
+    {{outlet}}
+  </viewer.main>
+</DocsViewer>

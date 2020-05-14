@@ -1,0 +1,33 @@
+<DocsDemo as |demo|>
+  <demo.example @name="examples-labels-left.hbs">
+    <BarChart
+      @barHeight={{10}}
+      @barGap={{10}}
+      class="box overflow-visible mt-10 mb-10 pl-100 w-full"
+      as |chart|
+    >
+      <chart.Bar @value={{80}} as |bar|>
+        <bar.Rect />
+        <text y={{bar.yOffset}} dx="-100px" dy="0.6em">
+          First Bar
+        </text>
+      </chart.Bar>
+
+      <chart.Bar @value={{50}} as |bar|>
+        <bar.Rect />
+        <text y={{bar.yOffset}} dx="-100px" dy="0.6em">
+          Second Bar
+        </text>
+      </chart.Bar>
+
+      <chart.Bar @value={{70}} as |bar|>
+        <bar.Rect />
+        <text y={{bar.yOffset}} dx="-100px" dy="0.6em">
+          Third Bar
+        </text>
+      </chart.Bar>
+    </BarChart>
+  </demo.example>
+
+  {{demo.snippet 'examples-labels-left.hbs'}}
+</DocsDemo>

@@ -1,0 +1,17 @@
+<DocsDemo as |demo|>
+  <demo.example @name="cookbook-custom-height-attribute.hbs">
+    <BarChart
+      @barHeight={{10}}
+      @barGap={{10}}
+      class="w-full"
+      height="200"
+      as |chart|
+    >
+      <chart.Bar @value={{100}} />
+      <chart.Bar @value={{50}} />
+      <chart.Bar @value={{70}} />
+    </BarChart>
+  </demo.example>
+
+  {{demo.snippet 'cookbook-custom-height-attribute.hbs'}}
+</DocsDemo>
