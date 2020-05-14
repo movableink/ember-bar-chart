@@ -25,6 +25,13 @@ export default class BarChartComponent extends Component {
     return this.indexSet.size;
   }
 
+  get height() {
+    const barHeight = this.barCount * this.barHeight;
+    const gapHeight = Math.max(this.barCount - 1, 0) * this.gap;
+
+    return barHeight + gapHeight;
+  }
+
   /**
    * @param {import('./bar-chart/bar').default} barComponent
    * @param {SVGRectElement} rectElement
