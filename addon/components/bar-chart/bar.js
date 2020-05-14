@@ -1,5 +1,6 @@
 import Component from "@ember/component";
 import { action, computed } from "@ember/object";
+import layout from "../../templates/components/bar-chart/bar";
 
 /**
  * Renders a bar in a `<BarChart />`
@@ -29,6 +30,7 @@ import { action, computed } from "@ember/object";
  */
 export default class BarChartBarComponent extends Component {
   tagName = "";
+  layout = layout;
 
   @computed("y")
   get yOffset() {
