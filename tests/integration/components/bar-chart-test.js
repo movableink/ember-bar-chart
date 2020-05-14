@@ -9,7 +9,7 @@ module("Integration | Component | bar-chart", function (hooks) {
 
   test("can declaratively render simple bars", async function (assert) {
     await render(hbs`
-      <BarChart @barHeight={{10}} width="500" as |chart|>
+      <BarChart @barHeight={{10}} @barGap={{10}} width="500" as |chart|>
         <chart.Bar @value={{100}} data-test-bar="0" />
         <chart.Bar @value={{50}} data-test-bar="1" />
         <chart.Bar @value={{70}} data-test-bar="2" />
@@ -40,6 +40,13 @@ module("Integration | Component | bar-chart", function (hooks) {
         "width",
         "70%",
         "Calculated the correct width for the third bar"
+      );
+
+    assert
+      .dom("svg")
+      .hasStyle(
+        { height: "50px" },
+        "Sets a `height` attribute on the chart element"
       );
   });
 
