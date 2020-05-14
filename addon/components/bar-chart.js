@@ -1,6 +1,7 @@
 import Component from "@ember/component";
 import { action } from "@ember/object";
 import { TrackedMap, TrackedSet } from "tracked-maps-and-sets";
+import layout from "../templates/components/bar-chart";
 
 /**
  * Render a Bar Chart through an SVG
@@ -22,6 +23,7 @@ import { TrackedMap, TrackedSet } from "tracked-maps-and-sets";
  */
 export default class BarChartComponent extends Component {
   tagName = "";
+  layout = layout;
 
   /** @prop {TrackedMap<SVGGElement, number>} **/
   valueMap = new TrackedMap();
