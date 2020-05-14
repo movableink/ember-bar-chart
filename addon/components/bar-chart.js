@@ -1,6 +1,6 @@
 import Component from "@ember/component";
 import { action } from "@ember/object";
-import { TrackedMap } from "tracked-maps-and-sets";
+import { TrackedMap, TrackedSet } from "tracked-maps-and-sets";
 
 export default class BarChartComponent extends Component {
   tagName = "";
@@ -8,8 +8,8 @@ export default class BarChartComponent extends Component {
   /** @prop {TrackedMap<SVGGElement, number>} **/
   valueMap = new TrackedMap();
 
-  /** @prop {TrackedMap<SVGRectElement, number>} **/
-  indexMap = new TrackedMap();
+  /** @prop {TrackedMap<SVGRectElement>} **/
+  indexSet = new TrackedSet();
 
   get gap() {
     return this.barGap || 0;
@@ -22,7 +22,7 @@ export default class BarChartComponent extends Component {
   }
 
   get barCount() {
-    return this.indexMap.size;
+    return this.indexSet.size;
   }
 
   /**
@@ -31,7 +31,7 @@ export default class BarChartComponent extends Component {
    */
   @action setBarPosition(barComponent, rectElement) {
     const index = this.barCount;
-    this.indexMap.set(rectElement, index);
+    this.indexSet.add(rectElement);
 
     const yOffset = index * this.barHeight + index * this.gap;
     barComponent.set("y", yOffset);
