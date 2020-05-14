@@ -20,34 +20,35 @@ module("Integration | Component | bar-chart", function (hooks) {
 
     assert.dom("g rect").exists({ count: 3 }, "Renders 3 bar components");
 
-    assert
-      .dom("[data-test-bar='0'] rect")
-      .hasAttribute(
-        "width",
-        "100%",
-        "Calculated the correct width for the first bar"
-      );
-    assert
-      .dom("[data-test-bar='1'] rect")
-      .hasAttribute(
-        "width",
-        "50%",
-        "Calculated the correct width for the second bar"
-      );
-    assert
-      .dom("[data-test-bar='2'] rect")
-      .hasAttribute(
-        "width",
-        "70%",
-        "Calculated the correct width for the third bar"
-      );
-
-    assert
-      .dom("svg")
-      .hasStyle(
-        { height: "50px" },
-        "Sets a `height` attribute on the chart element"
-      );
+    await assert.waitFor(() => {
+      assert
+        .dom("[data-test-bar='0'] rect")
+        .hasAttribute(
+          "width",
+          "100%",
+          "Calculated the correct width for the first bar"
+        );
+      assert
+        .dom("[data-test-bar='1'] rect")
+        .hasAttribute(
+          "width",
+          "50%",
+          "Calculated the correct width for the second bar"
+        );
+      assert
+        .dom("[data-test-bar='2'] rect")
+        .hasAttribute(
+          "width",
+          "70%",
+          "Calculated the correct width for the third bar"
+        );
+      assert
+        .dom("svg")
+        .hasStyle(
+          { height: "50px" },
+          "Sets a `height` attribute on the chart element"
+        );
+    });
   });
 
   test("can render the `rect` explicitly", async function (assert) {

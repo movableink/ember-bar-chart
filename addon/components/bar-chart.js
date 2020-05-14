@@ -1,6 +1,5 @@
 import Component from "@ember/component";
-import { action } from "@ember/object";
-import { TrackedMap, TrackedSet } from "tracked-maps-and-sets";
+import { action, computed } from "@ember/object";
 import layout from "../templates/components/bar-chart";
 
 /**
@@ -25,26 +24,30 @@ export default class BarChartComponent extends Component {
   tagName = "";
   layout = layout;
 
-  /** @prop {TrackedMap<SVGGElement, number>} **/
-  valueMap = new TrackedMap();
+  /** @prop {Map<SVGGElement, number>} **/
+  valueMap = new Map();
 
-  /** @prop {TrackedMap<SVGRectElement>} **/
-  indexSet = new TrackedSet();
+  /** @prop {Set<SVGRectElement>} **/
+  indexSet = new Set();
 
+  @computed("barGap")
   get gap() {
     return this.barGap || 0;
   }
 
+  @computed("valueMap")
   get maxValue() {
     return [...this.valueMap.values()].reduce((largest, next) => {
       return largest > next ? largest : next;
     }, 0);
   }
 
+  @computed("indexSet.size")
   get barCount() {
     return this.indexSet.size;
   }
 
+  @computed("barCount", "barHeight", "gap", "gapHeight")
   get height() {
     const barHeight = this.barCount * this.barHeight;
     const gapHeight = Math.max(this.barCount - 1, 0) * this.gap;
@@ -59,6 +62,7 @@ export default class BarChartComponent extends Component {
   @action setBarPosition(barComponent, rectElement) {
     const index = this.barCount;
     this.indexSet.add(rectElement);
+    this.notifyPropertyChange("indexSet");
 
     const yOffset = index * this.barHeight + index * this.gap;
     barComponent.set("y", yOffset);
@@ -71,5 +75,6 @@ export default class BarChartComponent extends Component {
    */
   @action receiveValue(value, element) {
     this.valueMap.set(element, value);
+    this.notifyPropertyChange("valueMap");
   }
 }
