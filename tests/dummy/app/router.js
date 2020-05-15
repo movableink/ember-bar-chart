@@ -9,6 +9,7 @@ export default class Router extends AddonDocsRouter {
 Router.map(function () {
   docsRoute(this, function () {
     this.route("usage");
+    this.route("dynamic-data");
 
     this.route("cookbook", function () {
       this.route("custom-height");

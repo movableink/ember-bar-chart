@@ -1,0 +1,20 @@
+<DocsDemo as |demo|>
+  <demo.example @name="dynamic-data-immutable-without-key.hbs">
+    <ul>
+      {{#each this.bars as |bar index|}}
+        <input type="range" min="1" max="150" value={{bar.value}} {{on 'input' (fn this.updateBar index)}} />
+        <br />
+      {{/each}}
+    </ul>
+
+    <hr />
+    <BarChart @barHeight={{10}} @barGap={{10}} class="w-full" as |chart|>
+      {{#each this.bars as |bar|}}
+        <chart.Bar @value={{bar.value}} />
+      {{/each}}
+    </BarChart>
+  </demo.example>
+
+  {{demo.snippet "dynamic-data-immutable-without-key.hbs" label="Template"}}
+  {{demo.snippet "dynamic-data-immutable.js" label="Component"}}
+</DocsDemo>
