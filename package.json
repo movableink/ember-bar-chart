@@ -1,6 +1,6 @@
 {
   "name": "@movable/ember-bar-chart",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "A simple, declarative Ember component for rendering SVG bar charts",
   "keywords": [
     "ember-addon"

@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-beta.2](https://github.com/movableink/ember-bar-chart/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2020-05-15)
+
+### Features
+
+- add `MeasuredTextGroup` component ([ad23747](https://github.com/movableink/ember-bar-chart/commit/ad237471fbf439e4262ba0afc13ee4a5fe74b8aa))
+
 ## [1.0.0-beta.1](https://github.com/movableink/ember-bar-chart/compare/v1.0.0-beta.0...v1.0.0-beta.1) (2020-05-15)
 
 ### Bug Fixes
