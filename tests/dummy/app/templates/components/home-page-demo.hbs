@@ -1,0 +1,11 @@
+<DocsDemo as |demo|>
+  <demo.example @name="home-page-demo.hbs">
+    <BarChart @barHeight={{10}} @barGap={{10}} class="w-full" as |chart|>
+      <chart.Bar @value={{100}} />
+      <chart.Bar @value={{50}} />
+      <chart.Bar @value={{70}} />
+    </BarChart>
+  </demo.example>
+
+  {{demo.snippet "home-page-demo.hbs"}}
+</DocsDemo>
