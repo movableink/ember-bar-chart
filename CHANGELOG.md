@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-beta.1](https://github.com/movableink/ember-bar-chart/compare/v1.0.0-beta.0...v1.0.0-beta.1) (2020-05-15)
+
+### Bug Fixes
+
+- correctly update value map ([3e9e18d](https://github.com/movableink/ember-bar-chart/commit/3e9e18d988739c808bc6c83f9e474d8bbaef90dd))
+- handle destroying bars ([7e95354](https://github.com/movableink/ember-bar-chart/commit/7e9535442b45f36af95afbf258cbeb544722f01e))
+
 ## 1.0.0-beta.0 (2020-05-14)
 
 ### Features
