@@ -24,10 +24,10 @@ export default class BarChartComponent extends Component {
   tagName = "";
   layout = layout;
 
-  /** @prop {Map<SVGGElement, number>} **/
+  /** @type {Map<SVGGElement, number>} **/
   valueMap = new Map();
 
-  /** @prop {Set<SVGRectElement>} **/
+  /** @type {Set<SVGRectElement>} **/
   indexSet = new Set();
 
   @computed("barGap")
