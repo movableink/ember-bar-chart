@@ -1,6 +1,7 @@
 <g
   {{did-insert (fn @reportValue @value)}}
   {{did-update (fn @reportValue @value) @value}}
+  {{will-destroy @onBarDestroy}}
 ...attributes
 >
   {{#if hasBlock}}
@@ -10,6 +11,7 @@
         width=this.widthPercentage
         setBarPosition=(fn @setBarPosition this)
         positionDidChange=this.updatePosition
+        onDestroy=@onRectDestroy
       )
       height=@height
       yOffset=this.yOffset
@@ -21,6 +23,7 @@
       @width={{this.widthPercentage}}
       @setBarPosition={{fn @setBarPosition this}}
       @positionDidChange={{this.updatePosition}}
+      @onDestroy={{@onRectDestroy}}
     />
   {{/if}}
 </g>

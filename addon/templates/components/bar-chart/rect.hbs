@@ -2,6 +2,7 @@
   height={{@height}}
   width={{@width}}
   {{did-insert @setBarPosition}}
+  {{will-destroy @onDestroy}}
   {{observe-resize @positionDidChange}}
   ...attributes
 ></rect>

@@ -77,4 +77,20 @@ export default class BarChartComponent extends Component {
     this.valueMap.set(element, value);
     this.notifyPropertyChange("valueMap");
   }
+
+  /**
+   * @param {SVGGElement} barElement
+   */
+  @action handleDestroyedBar(barElement) {
+    this.valueMap.delete(barElement);
+    this.notifyPropertyChange("valueMap");
+  }
+
+  /**
+   * @param {SVGRectElement} rectElement
+   */
+  @action handleDestroyedRect(rectElement) {
+    this.indexSet.delete(rectElement);
+    this.notifyPropertyChange("indexSet");
+  }
 }
